@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bright Dashboard - Vakantiepark Beheer</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="wrapper">
+        <!-- Sidebar -->
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <h3>Bright Dashboard</h3>
+            </div>
+
+            <ul class="list-unstyled components">
+                <li class="active">
+                    <a href="#" id="nav-dashboard"><i class="bi bi-speedometer2"></i> Dashboard</a>
+                </li>
+                <li>
+                    <a href="#" id="nav-accommodaties"><i class="bi bi-houses"></i> Accommodaties</a>
+                </li>
+                <li>
+                    <a href="#" id="nav-meldingen"><i class="bi bi-bell"></i> Meldingen</a>
+                </li>
+                <li>
+                    <a href="#" id="nav-plattegrond"><i class="bi bi-map"></i> Plattegrond</a>
+                </li>
+                <li>
+                    <a href="#" id="nav-energie"><i class="bi bi-lightning-charge"></i> Energie</a>
+                </li>
+                <li>
+                    <a href="#" id="nav-robots"><i class="bi bi-robot"></i> Robots</a>
+                </li>
+                <li>
+                    <a href="#" id="nav-feedback"><i class="bi bi-chat-dots"></i> Gastfeedback</a>
+                </li>
+                <li>
+                    <a href="#" id="nav-integraties"><i class="bi bi-plug"></i> Integraties</a>
+                </li>
+            </ul>
+
+            <div class="sidebar-footer">
+                <div class="dropdown">
+                    <a href="#" class="d-flex align-items-center text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+                        <img src="https://via.placeholder.com/32" alt="User" width="32" height="32" class="rounded-circle me-2">
+                        <span>Technisch Beheerder</span>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
+                        <li><a class="dropdown-item" href="#">Profiel</a></li>
+                        <li><a class="dropdown-item" href="#">Instellingen</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="#">Uitloggen</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Page Content -->
+        <div id="content">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+                    <button type="button" id="sidebarCollapse" class="btn btn-info">
+                        <i class="bi bi-list"></i>
+                    </button>
+                    
+                    <div class="ms-auto d-flex">
+                        <div class="dropdown me-3">
+                            <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="roleDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="bi bi-person"></i> Rol: Technische Dienst
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="roleDropdown">
+                                <li><a class="dropdown-item" href="#">Technische Dienst</a></li>
+                                <li><a class="dropdown-item" href="#">Receptie</a></li>
+                                <li><a class="dropdown-item" href="#">Management</a></li>
+                            </ul>
+                        </div>
+                        <button class="btn btn-outline-secondary">
+                            <i class="bi bi-bell"></i>
+                            <span class="badge bg-danger">5</span>
+                        </button>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- Main Dashboard Content -->
+            <div id="dashboard-content" class="container-fluid p-4">
+                <h2 class="mb-4">Managementoverzicht & KPI's</h2>
+                
+                <div class="row mb-4">
+                    <div class="col-md-3">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Open Storingen</h5>
+                                <h2 class="card-text text-danger">24</h2>
+                                <p class="card-text text-muted"><small>+3 sinds gisteren</small></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Robot Readiness</h5>
+                                <div class="progress">
+                                    <div class="progress-bar bg-success" role="progressbar" style="width: 85%;" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">85%</div>
+                                </div>
+                                <p class="card-text text-muted mt-2"><small>2 robots in onderhoud</small></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Technische Score</h5>
+                                <h2 class="card-text text-success">8.2</h2>
+                                <p class="card-text text-muted"><small>+0.3 sinds vorige week</small></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Energieverbruik</h5>
+                                <h2 class="card-text">
+                                    <i class="bi bi-arrow-down-short text-success"></i> -12%
+                                </h2>
+                                <p class="card-text text-muted"><small>vs. vorige maand</small></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="card mb-4">
+                            <div class="card-header">
+                                <h5>Recente Meldingen</h5>
+                            </div>
+                            <div class="card-body">
+                                <div class="list-group">
+                                    <a href="#" class="list-group-item list-group-item-action">
+                                        <div class="d-flex w-100 justify-content-between">
+                                            <h6 class="mb-1"><span class="badge bg-danger me-2">Urgent</span> Slim slot defect - Unit 42</h6>
+                                            <small>3 uur geleden</small>
+                                        </div>
+                                        <p class="mb-1">Gast kan accommodatie niet in, slot reageert niet op app of sleutelkaart.</p>
+                                    </a>
+                                    <a href="#" class="list-group-item list-group-item-action">
+                                        <div class="d-flex w-100 justify-content-between">
+                                            <h6 class="mb-1"><span class="badge bg-warning me-2">Medium</span> Wifi-storing - Zone C</h6>
+                                            <small>5 uur geleden</small>
+                                        </div>
+                                        <p class="mb-1">Meerdere gasten melden trage internetverbinding in Zone C.</p>
+                                    </a>
+                                    <a href="#" class="list-group-item list-group-item-action">
+                                        <div class="d-flex w-100 justify-content-between">
+                                            <h6 class="mb-1"><span class="badge bg-info me-2">Info</span> Predictief onderhoud - Robot 3</h6>
+                                            <small>1 dag geleden</small>
+                                        </div>
+                                        <p class="mb-1">Borstels van schoonmaakrobot 3 zijn aan vervanging toe binnen 5 dagen.</p>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <a href="#" class="btn btn-sm btn-outline-primary">Alle meldingen bekijken</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card">
+                            <div class="card-header">
+                                <h5>Top 5 Units met Storingen</h5>
+                            </div>
+                            <div class="card-body">
+                                <div class="chart-container">
+                                    <canvas id="problemUnitsChart"></canvas>
+                                </div>
+                            </div>
+                            <div class="card-footer text-end">
+                                <button class="btn btn-sm btn-outline-secondary">
+                                    <i class="bi bi-file-earmark-pdf"></i> Genereer rapport (PDF)
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Accommodaties Content (Hidden by default) -->
+            <div id="accommodaties-content" class="container-fluid p-4" style="display: none;">
+                <h2 class="mb-4">Realtime status per accommodatie</h2>
+                
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Zoek op unit nummer of status...">
+                            <button class="btn btn-outline-secondary" type="button">Zoeken</button>
+                        </div>
+                    </div>
+                    <div class="col-md-6 text-end">
+                        <div class="btn-group" role="group">
+                            <button type="button" class="btn btn-outline-secondary active">
+                                <i class="bi bi-grid"></i>
+                            </button>
+                            <button type="button" class="btn btn-outline-secondary">
+                                <i class="bi bi-list"></i>
+                            </button>
+                        </div>
+                        <button class="btn btn-outline-secondary ms-2">
+                            <i class="bi bi-funnel"></i> Filter
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <!-- Unit Card 1 -->
+                    <div class="col-md-4 col-lg-3 mb-4">
+                        <div class="card">
+                            <div class="card-header d-flex justify-content-between align-items-center">
+                                <h5>Unit 12</h5>
+                                <span class="badge bg-success">Health: 9.8</span>
+                            </div>
+                            <div class="card-body">
+                                <div class="unit-status-item">
+                                    <i class="bi bi-door-closed text-success"></i> Slim slot: Gesloten
+                                    <span class="float-end"><i class="bi bi-battery-full text-success"></i> 92%</span>
+                                </div>
+                                <div class="unit-status-item">
+                                    <i class="bi bi-thermometer-half text-success"></i> Temperatuur: 21.5°C
+                                    <span class="float-end">Ingesteld: 21°C</span>
+                                </div>
+                                <div class="unit-status-item">
+                                    <i class="bi bi-wifi text-success"></i> Wifi: Online
+                                    <span class="float-end">
+                                        <i class="bi bi-reception-4"></i>
+                                    </span>
+                                </div>
+                                <div class="unit-status-item">
+                                    <i class="bi bi-person-check text-success"></i> Bezetting: Gast aanwezig
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <button class="btn btn-sm btn-outline-primary">Details</button>
+                                <button class="btn btn-sm btn-outline-secondary">Geschiedenis</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Unit Card 2 -->
+                    <div class="col-md-4 col-lg-3 mb-4">
+                        <div class="card">
+                            <div class="card-header d-flex justify-content-between align-items-center">
+                                <h5>Unit 23</h5>
+                                <span class="badge bg-warning">Health: 7.2</span>
+                            </div>
+                            <div class="card-body">
+                                <div class="unit-status-item">
+                                    <i class="bi bi-door-open text-warning"></i> Slim slot: Open
+                                    <span class="float-end"><i class="bi bi-battery-half text-warning"></i> 45%</span>
+                                </div>
+                                <div class="unit-status-item">
+                                    <i class="bi bi-thermometer-high text-danger"></i> Temperatuur: 24.8°C
+                                    <span class="float-end">Ingesteld: 21°C</span>
+                                </div>
+                                <div class="unit-status-item">
+                                    <i class="bi bi-wifi text-success"></i> Wifi: Online
+                                    <span class="float-end">
+                                        <i class="bi bi-reception-3"></i>
+                                    </span>
+                                </div>
+                                <div class="unit-status-item">
+                                    <i class="bi bi-person-check text-success"></i> Bezetting: Gast aanwezig
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <button class="btn btn-sm btn-outline-primary">Details</button>
+                                <button class="btn btn-sm btn-outline-secondary">Geschiedenis</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Unit Card 3 -->
+                    <div class="col-md-4 col-lg-3 mb-4">
+                        <div class="card">
+                            <div class="card-header d-flex justify-content-between align-items-center">
+                                <h5>Unit 34</h5>
+                                <span class="badge bg-danger">Health: 5.1</span>
+                            </div>
+                            <div class="card-body">
+                                <div class="unit-status-item">
+                                    <i class="bi bi-door-closed text-success"></i> Slim slot: Gesloten
+                                    <span class="float-end"><i class="bi bi-battery-full text-success"></i> 88%</span>
+                                </div>
+                                <div class="unit-status-item">
+                                    <i class="bi bi-thermometer-half text-success"></i> Temperatuur: 20.5°C
+                                    <span class="float-end">Ingesteld: 20°C</span>
+                                </div>
+                                <div class="unit-status-item">
+                                    <i class="bi bi-wifi text-danger"></i> Wifi: Offline
+                                    <span class="float-end">
+                                        <i class="bi bi-reception-0"></i>
+                                    </span>
+                                </div>
+                                <div class="unit-status-item">
+                                    <i class="bi bi-person-x text-secondary"></i> Bezetting: Leeg
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <button class="btn btn-sm btn-outline-primary">Details</button>
+                                <button class="btn btn-sm btn-outline-secondary">Geschiedenis</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Unit Card 4 -->
+                    <div class="col-md-4 col-lg-3 mb-4">
+                        <div class="card">
+                            <div class="card-header d-flex justify-content-between align-items-center">
+                                <h5>Unit 42</h5>
+                                <span class="badge bg-danger">Health: 4.3</span>
+                            </div>
+                            <div class="card-body">
+                                <div class="unit-status-item">
+                                    <i class="bi bi-door-closed text-danger"></i> Slim slot: Defect
+                                    <span class="float-end"><i class="bi bi-battery-full text-success"></i> 95%</span>
+                                </div>
+                                <div class="unit-status-item">
+                                    <i class="bi bi-thermometer-half text-success"></i> Temperatuur: 21.0°C
+                                    <span class="float-end">Ingesteld: 21°C</span>
+                                </div>
+                                <div class="unit-status-item">
+                                    <i class="bi bi-wifi text-success"></i> Wifi: Online
+                                    <span class="float-end">
+                                        <i class="bi bi-reception-4"></i>
+                                    </span>
+                                </div>
+                                <div class="unit-status-item">
+                                    <i class="bi bi-person-check text-success"></i> Bezetting: Gast aanwezig
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <button class="btn btn-sm btn-outline-primary">Details</button>
+                                <button class="btn btn-sm btn-outline-secondary">Geschiedenis</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- More unit cards would go here -->
+                </div>
+                
+                <nav aria-label="Page navigation">
+                    <ul class="pagination justify-content-center">
+                        <li class="page-item disabled">
+                            <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Vorige</a>
+                        </li>
+                        <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">Volgende</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+
+            <!-- Placeholder for other module content sections -->
+            <div id="meldingen-content" class="container-fluid p-4" style="display: none;">
+                <h2 class="mb-4">Slimme meldingen en monitoring</h2>
+                <!-- Content will be added later -->
+            </div>
+            
+            <div id="plattegrond-content" class="container-fluid p-4" style="display: none;">
+                <h2 class="mb-4">Interactieve parkplattegrond (Digital Twin)</h2>
+                <!-- Content will be added later -->
+            </div>
+            
+            <div id="energie-content" class="container-fluid p-4" style="display: none;">
+                <h2 class="mb-4">Energie- en verbruiksmonitoring</h2>
+                <!-- Content will be added later -->
+            </div>
+            
+            <div id="robots-content" class="container-fluid p-4" style="display: none;">
+                <h2 class="mb-4">Robots & autonome systemen</h2>
+                <!-- Content will be added later -->
+            </div>
+            
+            <div id="feedback-content" class="container-fluid p-4" style="display: none;">
+                <h2 class="mb-4">Gastfeedback gekoppeld aan techniek</h2>
+                <!-- Content will be added later -->
+            </div>
+            
+            <div id="integraties-content" class="container-fluid p-4" style="display: none;">
+                <h2 class="mb-4">Systeemintegraties</h2>
+                <!-- Content will be added later -->
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="data/mock-data.js"></script>
+    <script src="js/modules.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
