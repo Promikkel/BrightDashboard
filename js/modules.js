@@ -713,7 +713,7 @@ function initRobotsModule() {
                                 <p class="mb-0"><i class="bi bi-geo-alt"></i> ${robot.location}</p>
                             </div>
                             <div class="mb-3">
-                                <label class="form-label">Readiness</label>
+                                <label class="form-label">Status</label>
                                 <div class="progress">
                                     <div class="progress-bar ${robot.readiness < 50 ? 'bg-danger' : robot.readiness < 80 ? 'bg-warning' : 'bg-success'}" role="progressbar" style="width: ${robot.readiness}%;" aria-valuenow="${robot.readiness}" aria-valuemin="0" aria-valuemax="100">${robot.readiness}%</div>
                                 </div>
